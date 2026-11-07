@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Du Lịch Trọn Gói - Vietjet Travel</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/tours.css">
+    <!-- SQLite WebAssembly CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <!-- EmailJS SDK CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+    <!-- Header dùng chung -->
+    <header id="site-header"></header>
+
+    <main class="tours-page-layout">
+        <div class="container">
+            <div class="tours-container">
+                
+                <!-- BỘ LỌC TOUR BÊN TRÁI -->
+                <aside class="filter-sidebar">
+                    <div class="filter-header">
+                        <h3>Bộ Lọc Tour</h3>
+                        <button type="button" id="btn-reset-tour-filters" class="btn-reset-filter">Đặt lại</button>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-title">Sắp xếp theo giá</label>
+                        <select id="filter-tour-sort" class="form-select">
+                            <option value="price_asc">Giá: Thấp đến Cao</option>
+                            <option value="price_desc">Giá: Cao đến Thấp</option>
+                            <option value="duration_desc">Thời lượng: Dài nhất</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-title">Hãng hàng không / Đối tác</label>
+                        <div id="filter-tour-airlines">
+                            <!-- Danh sách hãng bay checkbox -->
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <label class="filter-title">Thời lượng tour</label>
+                        <label class="form-check">
+                            <input type="radio" name="filter_duration" value="all" checked>
+                            <span>Tất cả thời lượng</span>
+                        </label>
+                        <label class="form-check">
+                            <input type="radio" name="filter_duration" value="3">
+                            <span>3 Ngày 2 Đêm</span>
+                        </label>
+                        <label class="form-check">
+                            <input type="radio" name="filter_duration" value="4">
+                            <span>4 Ngày 3 Đêm</span>
+                        </label>
+                        <label class="form-check">
+                            <input type="radio" name="filter_duration" value="5">
+                            <span>5 Ngày 4 Đêm trở lên</span>
+                        </label>
+                    </div>
+                </aside>
+
+                <!-- DANH SÁCH TOUR BÊN PHẢI -->
+                <section>
+                    <div style="background:#fff; padding:16px 20px; border-radius:8px; border:1px solid #dee2e6; margin-bottom:20px;">
+                        <h2 style="font-size:1.3rem; margin-bottom:4px;">Tour Du Lịch Trọn Gói Cao Cấp</h2>
+                        <p id="tours-count-text" style="color:#6c757d; font-size:13px;">Đang tải danh sách tour...</p>
+                    </div>
+
+                    <div id="tours-list">
+                        <!-- Danh sách tour render từ SQLite -->
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer dùng chung -->
+    <footer id="site-footer"></footer>
+
+    <!-- Script điều khiển -->
+    <script type="module" src="js/pages/tours.js"></script>
+</body>
+</html>

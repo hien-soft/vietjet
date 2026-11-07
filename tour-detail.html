@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Tour Du Lịch - Vietjet Travel</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/tour-detail.css">
+    <!-- SQLite WebAssembly CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <!-- EmailJS SDK CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+    <!-- Header dùng chung -->
+    <header id="site-header"></header>
+
+    <main class="tour-detail-page">
+        <div class="container">
+            <div style="margin-bottom: 20px;">
+                <a href="tours.html" class="btn btn-secondary btn-sm">← Quay lại danh sách tour</a>
+            </div>
+
+            <!-- Nội dung chi tiết tour -->
+            <div id="tour-detail-container">
+                <div class="text-center" style="padding: 40px 0;">
+                    <p>Đang tải chi tiết tour du lịch từ SQLite...</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer dùng chung -->
+    <footer id="site-footer"></footer>
+
+    <!-- Script điều khiển -->
+    <script type="module" src="js/pages/tour-detail.js"></script>
+</body>
+</html>

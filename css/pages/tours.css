@@ -1,0 +1,122 @@
+/**
+ * tours.css - Giao diện 2 cột cho trang Danh Sách Tour Du Lịch
+ */
+
+.tours-page-layout {
+    padding: 36px 0;
+}
+
+.tours-container {
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap: 28px;
+    align-items: flex-start;
+}
+
+.tour-card-horizontal {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 300px 1fr 200px;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+
+.tour-card-horizontal:hover {
+    border-color: var(--color-primary-border);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.tour-h-thumb-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    background: #eaeaea;
+}
+
+.tour-h-thumb-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tour-h-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tour-h-info .destination {
+    font-size: 12px;
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.tour-h-info h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.tour-h-info p {
+    font-size: 13px;
+    color: var(--color-text-sub);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.tour-h-meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tour-h-price-col {
+    padding: 20px;
+    background: #f8fafc;
+    border-left: 1px dashed var(--color-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.tour-h-price-col .price-label {
+    font-size: 12px;
+    color: var(--color-text-muted);
+}
+
+.tour-h-price-col .price-val {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+@media (max-width: 992px) {
+    .tours-container {
+        grid-template-columns: 1fr;
+    }
+    .tour-card-horizontal {
+        grid-template-columns: 1fr;
+    }
+    .tour-h-thumb-box {
+        aspect-ratio: 3 / 2;
+        min-height: auto;
+    }
+    .tour-h-price-col {
+        border-left: none;
+        border-top: 1px dashed var(--color-border);
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

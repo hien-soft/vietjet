@@ -1,0 +1,564 @@
+/**
+ * components.css - Các linh kiện UI chung (Header, Footer, Buttons, Cards, Badges, Modals, Toasts)
+ */
+
+/* ====================================================================
+   1. HEADER & NAVBAR
+   ==================================================================== */
+.site-header {
+    background-color: var(--color-bg-card);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+}
+
+.site-header .header-inner {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.site-logo img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.main-nav a {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--color-text-main);
+    padding: 8px 4px;
+    position: relative;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--color-primary);
+}
+
+.main-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-full);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.hotline-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid var(--color-primary-border);
+}
+
+.cart-icon-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-full);
+    background: var(--color-bg-alt);
+    color: var(--color-text-main);
+    transition: var(--transition);
+}
+
+.cart-icon-btn:hover {
+    background: var(--color-primary);
+    color: var(--color-text-white);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: var(--color-primary);
+    color: var(--color-text-white);
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: var(--radius-full);
+    text-align: center;
+    padding: 0 4px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* ====================================================================
+   2. BUTTONS
+   ==================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: var(--transition);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+    border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(238, 29, 35, 0.3);
+}
+
+.btn-primary:active {
+    background-color: var(--color-primary-active);
+    transform: translateY(0);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-white);
+}
+
+.btn-secondary {
+    background-color: var(--color-bg-alt);
+    color: var(--color-text-main);
+    border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-bg-hover);
+}
+
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: var(--radius-sm);
+}
+
+.btn-lg {
+    padding: 14px 28px;
+    font-size: 16px;
+    border-radius: var(--radius-md);
+}
+
+.btn-block {
+    width: 100%;
+}
+
+/* ====================================================================
+   3. BADGES
+   ==================================================================== */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+}
+
+.badge-primary {
+    background-color: var(--color-primary-light);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary-border);
+}
+
+.badge-eco {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.badge-business {
+    background: linear-gradient(135deg, #ffc107, #ff9800);
+    color: #000;
+    font-weight: 700;
+}
+
+.badge-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.badge-dark {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+/* ====================================================================
+   4. FORM CONTROLS
+   ==================================================================== */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--color-text-main);
+}
+
+.form-control,
+.form-select {
+    width: 100%;
+    height: 44px;
+    padding: 8px 14px;
+    font-size: 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: #fff;
+    color: var(--color-text-main);
+    transition: var(--transition);
+    outline: none;
+}
+
+textarea.form-control {
+    height: auto;
+    min-height: 80px;
+    resize: vertical;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(238, 29, 35, 0.15);
+}
+
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.form-check input[type="checkbox"],
+.form-check input[type="radio"] {
+    accent-color: var(--color-primary);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* ====================================================================
+   5. CARDS (Flight & Tour)
+   ==================================================================== */
+.card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    border-color: var(--color-primary-border);
+}
+
+/* Tour Card (Tỉ lệ chuẩn 600x400) */
+.tour-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-thumbnail-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2; /* 600x400 px */
+    overflow: hidden;
+    background: #eaeaea;
+}
+
+.tour-thumbnail-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.tour-card:hover .tour-thumbnail-wrapper img {
+    transform: scale(1.05);
+}
+
+.tour-badge-top-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.tour-badge-top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.tour-card-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tour-destination {
+    font-size: 12px;
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.tour-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 48px;
+    line-height: 1.4;
+}
+
+.tour-meta {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tour-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px dashed var(--color-border);
+}
+
+.tour-price-box .price-label {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    display: block;
+}
+
+.tour-price-box .price-val {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* ====================================================================
+   6. FOOTER
+   ==================================================================== */
+.site-footer {
+    background-color: #1a1a1a;
+    color: #d1d5db;
+    padding: 48px 0 24px;
+    margin-top: 60px;
+}
+
+.site-footer h4 {
+    color: #fff;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+.site-footer ul {
+    list-style: none;
+}
+
+.site-footer ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.site-footer a:hover {
+    color: var(--color-primary);
+}
+
+.footer-bottom {
+    margin-top: 36px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+}
+
+/* ====================================================================
+   7. MODAL & TOAST
+   ==================================================================== */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.modal-backdrop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: #fff;
+    border-radius: var(--radius-xl);
+    width: 90%;
+    max-width: 520px;
+    padding: 32px;
+    box-shadow: var(--shadow-lg);
+    transform: scale(0.9);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.modal-backdrop.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-icon-success {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--radius-full);
+    background: #e8f5e9;
+    color: #2e7d32;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin: 0 auto 16px;
+}
+
+.booking-code-box {
+    background: var(--color-primary-light);
+    border: 2px dashed var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    margin: 16px 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: 2px;
+}
+
+/* Toast Container */
+#toast-container {
+    position: fixed;
+    top: 84px;
+    right: 20px;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    background: #fff;
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: 12px 18px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 280px;
+    max-width: 380px;
+    font-size: 14px;
+    animation: slideInRight 0.3s ease;
+    transition: var(--transition);
+}
+
+.toast.toast-success {
+    border-left-color: var(--color-success);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ====================================================================
+   8. RESPONSIVE QUERIES
+   ==================================================================== */
+@media (max-width: 992px) {
+    .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .site-header .header-inner { height: 60px; }
+    .main-nav { gap: 14px; font-size: 13px; }
+    .hotline-badge { display: none; }
+    .grid-cols-4, .grid-cols-3, .grid-cols-2 { grid-template-columns: 1fr; }
+}

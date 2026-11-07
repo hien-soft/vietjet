@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietjet - Đặt Vé Máy Bay & Tour Du Lịch Giá Tốt</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/home.css">
+    <!-- SQLite WebAssembly CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <!-- EmailJS SDK CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+    <!-- Header dùng chung -->
+    <header id="site-header"></header>
+
+    <main>
+        <!-- Hero Banner & Hộp Tìm Kiếm Chuyến Bay -->
+        <section class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-title-box">
+                    <h1>Bay Khắp Việt Nam & Thế Giới Cùng Vietjet</h1>
+                    <p>Khám phá hàng ngàn chặng bay ưu đãi và các tour du lịch trọn gói chất lượng cao</p>
+                </div>
+
+                <div class="search-card">
+                    <form id="flight-search-form">
+                        <div class="trip-type-selector">
+                            <label class="trip-type-label">
+                                <input type="radio" name="trip_type" value="round" checked>
+                                <span>Vé khứ hồi</span>
+                            </label>
+                            <label class="trip-type-label">
+                                <input type="radio" name="trip_type" value="oneway">
+                                <span>Vé một chiều</span>
+                            </label>
+                        </div>
+
+                        <div class="search-fields-grid">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label">Điểm xuất phát</label>
+                                <select id="search-from" class="form-select" required></select>
+                            </div>
+
+                            <div class="swap-btn-box">
+                                <button type="button" id="swap-airports-btn" class="swap-btn" title="Đổi chiều điểm đi - đến">
+                                    ⇄
+                                </button>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label">Điểm đến</label>
+                                <select id="search-to" class="form-select" required></select>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label">Ngày đi</label>
+                                <input type="date" id="search-dep-date" class="form-control" required>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label">Ngày về</label>
+                                <input type="date" id="search-ret-date" class="form-control">
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label">Hành khách</label>
+                                <select id="search-pax" class="form-select">
+                                    <option value="1">1 Người lớn</option>
+                                    <option value="2">2 Người lớn</option>
+                                    <option value="3">3 Người lớn</option>
+                                    <option value="4">4 Người lớn</option>
+                                    <option value="5">5+ Khách đoàn</option>
+                                </select>
+                            </div>
+
+                            <div class="search-submit-box" style="margin-bottom: 0;">
+                                <button type="submit" class="btn btn-primary search-submit-btn w-full">
+                                    🔍 TÌM KIẾM
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8 Tour Du Lịch Nổi Bật -->
+        <section class="featured-tours-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>8 Tour Du Lịch Nổi Bật</h2>
+                    <p>Khám phá những điểm đến tuyệt sắc với dịch vụ cao cấp và chi phí tối ưu nhất</p>
+                </div>
+
+                <div id="featured-tours-list" class="grid grid-cols-4 gap-5">
+                    <!-- Danh sách 8 tour từ SQLite sẽ render ở đây -->
+                </div>
+
+                <div class="text-center" style="margin-top: 40px;">
+                    <a href="tours.html" class="btn btn-outline btn-lg">Xem Tất Cả Tour Du Lịch →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Đối Tác Hãng Hàng Không -->
+        <section class="partners-section">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 24px;">
+                    <h2>Đối Tác Hàng Không Đồng Hành</h2>
+                    <p>Nhấp vào logo hãng hàng không để tra cứu ngay các chuyến bay phù hợp</p>
+                </div>
+
+                <div id="airline-partners-list" class="partners-grid">
+                    <!-- Danh sách logo đối tác từ SQLite sẽ render ở đây -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer dùng chung -->
+    <footer id="site-footer"></footer>
+
+    <!-- Script điều khiển -->
+    <script type="module" src="js/pages/home.js"></script>
+</body>
+</html>
